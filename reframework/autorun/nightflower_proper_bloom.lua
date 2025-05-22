@@ -1,3 +1,5 @@
+-- Nightflower Proper Bloom by KamiUnitY. Ver. 1.0.0
+
 local re = re
 local sdk = sdk
 local d2d = d2d

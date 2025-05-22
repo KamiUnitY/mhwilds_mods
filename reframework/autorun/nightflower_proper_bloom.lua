@@ -172,8 +172,10 @@ sdk.hook(sdk.find_type_definition("app.cGameCountData_Main"):get_method("update(
         if collected_gm.is_empty then
             return
         end
+
         local this = sdk.to_managed_object(args[2])
         if not this then return end
+
         if is_daytime(this:get_field("_Count")) then
             collected_gm:clear()
             -- print("CLEAR")

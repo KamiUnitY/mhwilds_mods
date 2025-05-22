@@ -1,0 +1,12 @@
+{
+    // "Lua.workspace.library": [
+    //     "C:/Modding/MonsterHunterWilds/REFramework",
+    //     "C:/Modding/MonsterHunterWilds/REFramework-d2d"
+    // ],
+    // "Lua.workspace.checkThirdParty": false,
+    // "Lua.workspace.libraryFiles": "**/*.lua",
+    "Lua.diagnostics.globals": [
+        "sdk", "re", "imgui", "draw", "json", "log", "thread", "os", "d2d", "type_name", "Vector2f", "Vector3f", "Vector4f"
+    ],
+    "explorer.excludeGitIgnore": true
+}

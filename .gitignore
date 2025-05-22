@@ -1,0 +1,11 @@
+*
+!.vscode
+!.vscode/**
+!.gitignore
+!README.md
+
+!reframework
+!reframework/autorun
+!reframework/autorun/_kami_utilities
+!reframework/autorun/_kami_utilities/**
+!reframework/autorun/nightflower_proper_bloom.**

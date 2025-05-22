@@ -129,10 +129,11 @@ end
 
 sdk.hook(sdk.find_type_definition("app.EnemyManager"):get_method("onStageLoadEnd(app.FieldDef.STAGE)"),
     function(args)
-        -- print("onStageLoadEnd")
-        try_bloom_flower()
+
     end,
     function(retval)
+        -- print("onStageLoadEnd")
+        try_bloom_flower()
         return retval
     end
 )
@@ -157,10 +158,11 @@ sdk.hook(sdk.find_type_definition("app.Gm000_153"):get_method("successEvent()"),
 
 sdk.hook(sdk.find_type_definition("app.FacilityManager"):get_method("executeChangeTime()"),
     function(args)
-        collected_gm:clear()
-        -- print("CLEAR")
+
     end,
     function(retval)
+        collected_gm:clear()
+        -- print("CLEAR")
         return retval
     end
 )

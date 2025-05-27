@@ -54,6 +54,7 @@ core.dump_methods_recursive = function(self, obj)
 end
 
 core.dump_object = function(self, obj)
+    self:dump_fields_recursive(obj)
     self:dump_methods_recursive(obj)
 end
 

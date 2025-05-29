@@ -1,4 +1,4 @@
--- Nightflower Proper Bloom by KamiUnitY. Ver. 1.0.0
+-- Nightflower Proper Bloom by KamiUnitY. Ver. 1.0.1
 
 local re = re
 local sdk = sdk
@@ -74,8 +74,10 @@ end
 
 local function get_active_moon()
     local environment_manager = sdk.get_managed_singleton("app.EnvironmentManager")
+    local active_layer = environment_manager:call("getActiveTimeLayer()")
     local moon_controller = environment_manager:get_field("_MoonController")
-    local moon_idx = moon_controller:call("getActiveMoonData()"):call("get_MoonIdx()")
+    local moon_data = moon_controller:call("getMoonData(app.EnvironmentManager.FIELD_DATA_LAYER)", active_layer)
+    local moon_idx = moon_data:call("get_MoonIdx()")
     return moon_idx
 end
 
@@ -85,7 +87,8 @@ local function try_bloom_flower()
         return
     end
 
-    if is_daytime(get_layer_time()) then
+    local layer_time = get_layer_time()
+    if layer_time == nil or is_daytime(layer_time) then
         -- print("It is not at night.")
         return
     end
@@ -118,10 +121,10 @@ end
 --             try_bloom_flower()
 --         end
 --         if imgui.button("get_active_moon") then
---             print("Moon: " .. get_active_moon())
+--             print("Moon: " .. tostring(get_active_moon()))
 --         end
 --         if imgui.button("get_layer_time") then
---             print("Time: " .. get_layer_time())
+--             print("Time: " .. tostring(get_layer_time()))
 --         end
 --         imgui.tree_pop()
 --     end
